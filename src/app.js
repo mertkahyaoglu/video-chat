@@ -19,6 +19,7 @@ export class App extends Component {
 
     this.state.peer.on('open', (id) => console.log('Peer ID: ' + id));
     this.state.peer.on('call', this.onReceiveCall.bind(this));
+    this.prepareSelfVideo();
 
     var url = window.location.href;
     var match = url.match(/#(.+)/);
@@ -26,8 +27,6 @@ export class App extends Component {
       this.setState({caller:true});
       this.call(match[1]);
     }
-
-    this.prepareSelfVideo();
   }
 
   getMedia(options, success, error) {
@@ -80,11 +79,11 @@ export class App extends Component {
           <video className="video-call" autoPlay></video>
           <video className="video-self" autoPlay></video>
           <div className="share">
-            <a>Share - {"https://mertkahyaoglu.github.io/video-chat#"+this.state.hash}</a>
+            <a>Share - {"http://mertkahyaoglu.github.io/video-chat/#"+this.state.hash}</a>
           </div>
         </div>
         <footer>
-          Made by <a target="_blank" href="https://mertkahyaoglu.github.io">Mert Kahyaoğlu</a>
+          Made by <a target="_blank" href="http://mertkahyaoglu.github.io">Mert Kahyaoğlu</a>
         </footer>
       </div>
     );
