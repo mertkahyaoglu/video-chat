@@ -30,16 +30,12 @@ export class App extends Component {
     this.prepareSelfVideo();
   }
 
-  getMedia(success, error) {
-    navigator.getUserMedia({audio: true, video: true}, success, error);
-  }
-
-  getSelfMedia(success, error) {
-    navigator.getUserMedia({audio: false, video: true}, success, error);
+  getMedia(options, success, error) {
+    navigator.getUserMedia(options, success, error);
   }
 
   onReceiveCall(call) {
-    this.getMedia((stream) => {
+    this.getMedia({audio: true, video: true}, (stream) => {
       console.log("answering..");
       call.answer(stream)
     }, (err) => console.log(err));
@@ -56,14 +52,14 @@ export class App extends Component {
   }
 
   prepareSelfVideo() {
-    this.getSelfMedia((stream) => {
+    this.getMedia({audio: false, video: true}, (stream) => {
         var video = document.querySelector('.video-self');
         video.src = window.URL.createObjectURL(stream);
       }, (err) => console.log(err));
   }
 
   call(id) {
-    this.getMedia((stream) => {
+    this.getMedia({audio: true, video: true}, (stream) => {
         var call = this.state.peer.call(id, stream);
         console.log("calling..");
         call.on('stream', this.onReceiveStream);
