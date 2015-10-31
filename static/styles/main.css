@@ -1,0 +1,80 @@
+body {
+  background-color: #ECF0F1;
+  line-height: 1;
+  margin: 0;
+	padding: 0;
+  font-family: "helvetica neue";
+}
+
+nav {
+  background-color: #2B4049;
+  height: 50px;
+  color: white;
+  line-height: 50px;
+  padding: 0 20px;
+  margin: 0 0 50px 0;
+}
+
+footer {
+  background-color: #D1DADC;
+  color: #253841;
+  line-height: 50px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50px;
+  padding: 0 20px;
+}
+
+footer a {
+  color: #56AED4;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+footer a:hover {
+  color: #375595
+}
+
+.video-container {
+  background-color: #15252D;
+  border-radius: 4px 4px 0 0;
+  width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.video-call {
+  width: 600px;
+  height: 447px;
+}
+
+.video-self {
+  width: 174px;
+  height: 130px;
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+  background-color: #253841;
+  z-index: 10px;
+  border-radius: 24px 0 0 0;
+}
+
+.share {
+  background-color: #53B6EE;
+  height: 50px;
+  padding: 0 15px;
+}
+.share a {
+  line-height: 50px;
+  color: #375595;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.share a:hover {
+  color: #EA3D3D;
+}
