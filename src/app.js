@@ -80,7 +80,7 @@ export class App extends Component {
           <video className="video-call" autoPlay></video>
           <video className="video-self" autoPlay></video>
           <div className="share">
-            <a>Share - {"https://mertkahyaoglu.github.io/#"+this.state.hash}</a>
+            <a>Share - {"https://mertkahyaoglu.github.io/video-chat#"+this.state.hash}</a>
           </div>
         </div>
         <footer>
