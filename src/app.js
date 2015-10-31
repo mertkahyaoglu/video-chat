@@ -34,6 +34,10 @@ export class App extends Component {
     navigator.getUserMedia({audio: true, video: true}, success, error);
   }
 
+  getSelfMedia(success, error) {
+    navigator.getUserMedia({audio: false, video: true}, success, error);
+  }
+
   onReceiveCall(call) {
     this.getMedia((stream) => {
       console.log("answering..");
@@ -52,7 +56,7 @@ export class App extends Component {
   }
 
   prepareSelfVideo() {
-    this.getMedia((stream) => {
+    this.getSelfMedia((stream) => {
         var video = document.querySelector('.video-self');
         video.src = window.URL.createObjectURL(stream);
       }, (err) => console.log(err));
