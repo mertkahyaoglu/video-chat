@@ -62,7 +62,7 @@ export class App extends Component {
         var call = this.state.peer.call(id, stream);
         console.log("calling..");
         call.on('stream', this.onReceiveStream);
-      }, (err) => console.log(err)).bind(this);
+      }, (err) => console.log(err));
   }
 
   componentWillUnmount() {
